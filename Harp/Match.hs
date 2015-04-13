@@ -12,6 +12,8 @@
 -- using a Match monad for parsing lists.
 -----------------------------------------------------------------------------
 
+{-# LANGUAGE CPP #-}
+
 module Harp.Match (
         Match           -- Match e a
         , runMatch      -- Match e a -> [e] -> Maybe a
@@ -23,6 +25,9 @@ module Harp.Match (
         , (+++)
         ) where
 
+#if MIN_VERSION_base(4,8,0)
+import Control.Monad (ap, liftM)
+#endif
 import Data.List (unzip3, unzip4, unzip5, unzip6, unzip7)
 
 --------------------------------------------------------------
@@ -34,6 +39,15 @@ newtype Match e a = Match ([e] -> [(a, [e])])
 (Match f) +++ (Match g) = Match (\es -> let aes1 = f es
                                             aes2 = g es
                                          in aes1 ++ aes2)
+
+#if MIN_VERSION_base(4,8,0)
+instance Applicative (Match e) where
+   (<*>) = ap
+   pure = return
+
+instance Functor (Match e) where
+   fmap = liftM
+#endif
 
 instance Monad (Match e) where
   return x = Match (\es -> [(x, es)])
