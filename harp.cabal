@@ -1,9 +1,9 @@
 Name:                   harp
-Version:                0.4
+Version:                0.4.1
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
-Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+Maintainer:             David Fox <dsf@seereason.com>
 
 Stability:              Experimental
 Category:               Language
@@ -17,7 +17,7 @@ Description:            HaRP, or Haskell Regular Patterns, is a Haskell extensio
                         HaRP as a pre-processor to ordinary Haskell.
                         .
                         For details on usage, please see the website.
-Homepage:               http://www.cs.chalmers.se/~d00nibro/harp/
+Homepage:               https://github.com/seereason/harp
 
 Build-Depends:          base
 Build-Type:             Simple
