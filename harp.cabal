@@ -1,5 +1,5 @@
 Name:                   harp
-Version:                0.4.3
+Version:                0.4.3.1
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -27,5 +27,5 @@ source-repository head
     location: https://github.com/seereason/harp.git
 
 Library
-    Build-Depends:          base < 4.11
+    Build-Depends:          base < 4.12
     Exposed-modules:        Harp.Match
