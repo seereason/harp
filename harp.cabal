@@ -1,5 +1,5 @@
 Name:                   harp
-Version:                0.4.3.4
+Version:                0.4.3.5
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -19,13 +19,14 @@ Description:            HaRP, or Haskell Regular Patterns, is a Haskell extensio
                         For details on usage, please see the website.
 Homepage:               https://github.com/seereason/harp
 Build-Type:             Simple
-tested-with:            GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.2, GHC==8.0.1, GHC==8.2.2, GHC==8.4.1, GHC==8.6.5, GHC==8.8.3, GHC==8.10.1
-Cabal-Version:           >= 1.8
+tested-with:            GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC==8.0.2, GHC==8.2.2, GHC==8.4.1, GHC==8.6.5, GHC==8.8.4, GHC==8.10.7, GHC==9.0.2, GHC==9.2.2
+Cabal-Version:           >= 1.10
 
 source-repository head
     type:     git
     location: https://github.com/seereason/harp.git
 
 Library
-    Build-Depends:          base < 4.15
+    Default-Language:       Haskell2010
+    Build-Depends:          base < 4.17
     Exposed-modules:        Harp.Match
